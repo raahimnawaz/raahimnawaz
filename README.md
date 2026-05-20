@@ -11,6 +11,9 @@ Robotics engineer working at the intersection of first-principles physics, numer
 **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** &nbsp;·&nbsp; *Python / C++ / PyTorch*
 Physics-informed parameter estimation for vehicle braking dynamics. Compares batch optimization, EKF, MLP, and two PINNs on the same data, with an honest model-mismatch study. Ships an allocation-free C++ edge port delivering a **3,400× EKF speedup** over the Python reference — 62 KB binary, zero external deps, Jetson-targeted.
 
+**[monocular-vo](https://github.com/raahimnawaz/monocular-vo)** &nbsp;·&nbsp; *Python / PyTorch / OpenCV*
+Monocular visual odometry with **metric-scale trajectory recovery** from a single calibrated webcam. Uses [Depth Anything v2](https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf) per-frame depth + ORB matches + PnP-RANSAC to estimate camera motion in real-world units — bypassing the scale-ambiguity wall that classical essential-matrix monocular VO hits. **12.96 % scale error** on a tape-measured 5 m hallway walk; 1161 median inliers per frame; 227 ms depth inference on M5 MPS.
+
 **[aerospace-surrogate](https://github.com/raahimnawaz/aerospace-surrogate)** &nbsp;·&nbsp; *Python / Rust*
 ML surrogates for 2D airfoil aerodynamics benchmarked honestly against the 100-year-old thin-airfoil baseline (gradient boosting wins through stall, where the classical formula collapses to R² = −1.77). A nonlinear lifting-line solver lifts 2D sectional polars to 3D finite-wing predictions, with a faithful **Rust port that runs 9.8× faster than Python** and agrees to 1e-10 on every wing tested.
 
