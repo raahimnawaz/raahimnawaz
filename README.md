@@ -11,7 +11,7 @@ Most of what's below follows the same spine: **derive the physics → learn what
 #### Vehicle dynamics & control
 
 **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** · *Python / C++ / PyTorch*
-Physics-informed parameter estimation for vehicle braking dynamics. Five estimators on the same data — batch optimiser, EKF, MLP, and two PINNs — with an honest model-mismatch study showing which method wins *when*. Ships an allocation-free C++ edge port: **3,414× EKF speedup**, 62 KB binary, zero external dependencies, zero runtime allocations, Python↔C++ parity to 6.7e-9.
+Physics-informed parameter estimation for vehicle braking dynamics. Five estimators on the same data — batch optimiser, EKF, MLP, and two PINNs — with an honest model-mismatch study showing which method wins *when*. Ships an allocation-free C++ edge port: **3,414× EKF speedup** over the Python implementation, which is 99.97 % per-call dispatch — 62 KB binary, zero external dependencies, zero runtime allocations, Python↔C++ parity to 6.7e-9.
 
 **[engine-map-pinn](https://github.com/raahimnawaz/engine-map-pinn)** · *Python / PyTorch*
 From a dyno pull to a Nürburgring lap: a PINN reconstructs the full engine torque map from sparse sweeps, then a quasi-steady-state lap sim runs it on real circuit geometry (Silverstone, Spa, Nordschleife). Two findings worth the build — doubling the engine's power buys only **5–6 %** of lap time because most of a lap is grip-limited, while re-optimizing the *racing line* saves **53 s** on the Nordschleife. Validation brackets the SVJ's real 6:44.97 record rather than tuning to hit it.
@@ -33,7 +33,7 @@ Realtime CV on Apple Silicon, building to a closed perception → decision → a
 ML surrogates for airfoil aerodynamics, benchmarked against the 100-year-old thin-airfoil baseline — which **wins in the linear regime** and only collapses (R² = −1.77) through stall, where the surrogate holds R² = 0.77. A nonlinear lifting-line solver lifts 2D polars to 3D finite wings, reproducing the elliptic-wing identity to machine precision. The Rust port runs **9.8× faster** than Python and agrees to 1e-10 across 28 parity tests.
 
 **[synfuel-control](https://github.com/raahimnawaz/synfuel-control)** · *Python / C++ / ESP32*
-End-to-end sense → model → control → deploy for a thermal-runaway-prone Fischer–Tropsch reactor. Sobol analysis identifies pressure as the dominant runaway driver; a PINN surrogate (R² ≈ 0.996) drives an RTO + PI controller that holds **296 °C** through a cooling failure that otherwise runs away to 328 °C. Deployed as a dependency-free C++ engine at **0.98 µs/inference** — 4.8× faster than ONNX Runtime — closed in software-in-the-loop through a modeled analog front-end and an ESP32 node.
+End-to-end sense → model → control → deploy for a thermal-runaway-prone Fischer–Tropsch reactor. Sobol analysis identifies pressure as the dominant runaway driver; a PINN surrogate (R² ≈ 0.996) drives an RTO + PI controller that holds **296 °C** through a cooling failure that otherwise runs away to 328 °C. Deployed as a dependency-free C++ engine at **0.98 µs/inference** — 4.8× faster than the ONNX Runtime Python path — closed in software-in-the-loop through a modeled analog front-end and an ESP32 node.
 
 #### Also
 
