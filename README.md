@@ -11,7 +11,7 @@ Most of what's below follows the same spine: **derive the physics → learn what
 #### Vehicle dynamics & control
 
 **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** · *Python / C++ / PyTorch*
-Physics-informed parameter estimation for vehicle braking dynamics. Five estimators on the same data — batch optimiser, EKF, MLP, and two PINNs — with an honest model-mismatch study showing which method wins *when*. Ships an allocation-free C++ edge port: **3,414× EKF speedup** over the Python implementation, which is 99.97 % per-call dispatch — 62 KB binary, zero external dependencies, zero runtime allocations, Python↔C++ parity to 6.7e-9.
+Physics-informed parameter estimation for vehicle braking dynamics. Five estimators on the same data — batch optimiser, EKF, MLP, and two PINNs — with an honest model-mismatch study showing which method wins *when*. Ships an allocation-free C++ edge port at **7 ns per EKF step** — **41×** over equivalent scalar Python, and 360× over the NumPy implementation, whose per-call dispatch on 2×2 arrays is most of what that larger number measures — 62 KB binary, zero external dependencies, zero runtime allocations, Python↔C++ parity to 6.7e-9.
 
 **[engine-map-pinn](https://github.com/raahimnawaz/engine-map-pinn)** · *Python / PyTorch*
 From a dyno pull to a Nürburgring lap: a PINN reconstructs the full engine torque map from sparse sweeps, then a quasi-steady-state lap sim runs it on real circuit geometry (Silverstone, Spa, Nordschleife). Two findings worth the build — doubling the engine's power buys only **5–6 %** of lap time because most of a lap is grip-limited, while re-optimizing the *racing line* saves **53 s** on the Nordschleife. Validation brackets the SVJ's real 6:44.97 record rather than tuning to hit it.
@@ -24,8 +24,8 @@ Detect an approaching kinematic singularity in a 3R manipulator and switch to a 
 **[monocular-vo](https://github.com/raahimnawaz/monocular-vo)** · *Python / PyTorch / OpenCV*
 Monocular visual odometry with **metric-scale** trajectory recovery from a single calibrated webcam, using [Depth Anything v2](https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf) depth + ORB matches + PnP-RANSAC — bypassing the scale-ambiguity wall that classical essential-matrix VO hits. **12.96 % scale error** on a tape-measured 5 m hallway walk; a pose-graph back-end with loop closure cuts ATE by **36 %** on TUM RGB-D.
 
-**[vision_demos](https://github.com/raahimnawaz/vision_demos)** · *Python / OpenCV / MLX*
-Realtime CV on Apple Silicon, building to a closed perception → decision → actuation loop. `gesture_bot` takes webcam gestures through a debounced state machine (confidence gate, stability requirement, dead-man timeout) to `(v, ω)` — the same pair as `geometry_msgs/Twist` — behind pluggable sim / Arduino / HID backends.
+**[vision_demos](https://github.com/raahimnawaz/vision_demos)** · *Python / ROS 2 / PyTorch / OWLv2*
+A closed perception → decision → actuation loop that runs two ways over one controller — a plain Python loop and a ROS 2 node graph — with OWLv2 zero-shot open-vocabulary localization in 1.6 GB of VRAM. `gesture_bot` takes webcam gestures through a debounced state machine (confidence gate, stability requirement, dead-man timeout) to `(v, ω)` — the same pair as `geometry_msgs/Twist` — behind pluggable sim / Arduino / HID backends.
 
 #### Aerospace & process control
 
