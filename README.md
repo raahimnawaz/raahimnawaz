@@ -4,7 +4,7 @@ Robotics engineer working at the intersection of first-principles physics, numer
 
 Most of what's below follows the same spine: **derive the physics → learn what the physics can't close → benchmark it honestly against the classical baseline → port it to something that runs in a control loop.** The interesting part is usually where the model *loses*, so that's what I try to publish.
 
-**Now building:** a quadrotor flight stack growing out of quaternion-attitude-control, and an F1 simulator that runs my vehicle-dynamics work against real 2026 telemetry.
+**Now building:** a wildfire-mapping VTOL drone growing out of quaternion-attitude-control, developed in simulation, and an F1 simulator that runs my vehicle-dynamics work against real 2026 telemetry.
 
 📫 [LinkedIn](https://www.linkedin.com/in/raahim-nawaz-9ab64220b/)
 
@@ -21,7 +21,7 @@ A closed perception → decision → actuation loop: webcam gestures drive a rob
 #### Control & estimation
 
 **[quaternion-attitude-control](https://github.com/raahimnawaz/quaternion-attitude-control)** · *C++ / AVR / Wokwi*
-Quaternion attitude estimation and control on an ATmega2560 with no floating-point unit, against a rigid-body plant written as a custom Wokwi chip (Euler's equations, RK4, exponential-map integration). Mahony fusion with gyro-bias estimation feeds a PD law on quaternion error. Measured in software-in-the-loop: fixing a bus-speed reset and a blocking display call took the loop from **22.9 Hz to 179 Hz**, and the unwinding fix turns a 372° detour into **4.5°**. Yaw is unobservable without a magnetometer, and the README shows how far it drifts. It is the first piece of a wildfire-mapping quadrotor, developed in simulation.
+Quaternion attitude estimation and control on an ATmega2560 with no floating-point unit, against a rigid-body plant written as a custom Wokwi chip (Euler's equations, RK4, exponential-map integration). Mahony fusion with gyro-bias estimation feeds a PD law on quaternion error. Measured in software-in-the-loop: fixing a bus-speed reset and a blocking display call took the loop from **22.9 Hz to 179 Hz**, and the unwinding fix turns a 372° detour into **4.5°**. Yaw is unobservable without a magnetometer, and the README shows how far it drifts. It is the attitude core of a wildfire-mapping VTOL drone, developed in simulation.
 
 **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** · *Python / C++ / PyTorch*
 Physics-informed parameter estimation for vehicle braking dynamics. Five estimators on the same data (batch optimiser, EKF, MLP and two PINNs) with a model-mismatch study showing which method wins *when*. A network with no assumed functional form recovers the Pacejka friction peak at **0.889** against a true 0.900 from noisy braking data. Ships an allocation-free C++ edge port at **7 ns per EKF step** (**41×** over the same math in scalar Python), 33 KB deployable, zero external dependencies, Python↔C++ parity to 7.4e-9.
