@@ -10,7 +10,7 @@ Most of my work falls into three lines, each building on earlier projects.
 
 ---
 
-#### Robot arm
+#### Robotics
 
 **[workbench-copilot](https://github.com/raahimnawaz/workbench-copilot)** · *Python · LeRobot · SO-101 arm*
 - A voice-controlled lab assistant with a robot arm, built for the Meta Global AI Developer Hackathon 2026. A desk camera finds the tool you name and the arm picks it up; a command only runs when a local Llama model and a rule-based parser agree, giving **0 wrong moves** on 117 new phrasings.
