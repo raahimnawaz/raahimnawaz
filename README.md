@@ -30,10 +30,13 @@ Will build on:
 
 #### Motorsport
 
-**Parc fermé** *(in progress)*: an F1 telemetry and simulation platform that brings these three together.
-- **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)**: five estimators, from a Kalman filter to physics-informed neural networks, compared on the same braking data. The C++ port runs a filter step in **7 ns**.
-- **[engine-map-pinn](https://github.com/raahimnawaz/engine-map-pinn)**: from a dyno curve to a lap time on real circuits. A better racing line saves **53 s** at the Nürburgring; doubling the power gains only **5–6 %**.
-- **[apex-forecast](https://github.com/raahimnawaz/apex-forecast)** · [live](https://raahimnawaz.github.io/apex-forecast/): Bayesian F1 race forecasts for 2026. **93 %** of the finishing order comes down to the car.
+**[parc-ferme](https://github.com/raahimnawaz/parc-ferme)** · [live](https://raahimnawaz.github.io/parc-ferme/) · *Python · Numba*
+Post-session engineering debriefs for 2026 F1, worked out from public timing data by physics models checked against what the cars actually did. A digital 2026 car laps in **0.3 ms**, and a test bench with known answers recovers each team's mechanical grip to **0.3 %**.
+
+Builds on:
+- **[engine-map-pinn](https://github.com/raahimnawaz/engine-map-pinn)**: the track model and lap simulator, ported and extended for 2026. A better racing line saves **53 s** at the Nürburgring; doubling the power gains only **5–6 %**.
+- **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** *(planned: tyres and brakes)*: five estimators, from a Kalman filter to physics-informed neural networks, compared on the same braking data. The C++ port runs a filter step in **7 ns**.
+- **[apex-forecast](https://github.com/raahimnawaz/apex-forecast)** · [live](https://raahimnawaz.github.io/apex-forecast/) *(planned: race strategy)*: Bayesian F1 race forecasts for 2026. **93 %** of the finishing order comes down to the car.
 
 #### Also
 
