@@ -16,7 +16,7 @@ Most of what's below follows the same spine: **derive the physics → learn what
 A voice-driven lab partner with an SO-101 arm, built for the Meta Global AI Developer Hackathon 2026. A top-down camera finds a named tool on the desk at 0.5 mm per pixel, and damped-least-squares IK with minimum-jerk moves picks it up and puts it away. Every pose of a pick is solved and checked against joint limits, servo temperature and a floor clearance before the first motor moves; the IK round-trips 200 of 200 bench poses within **0.2 mm and 0.5°**. Spoken arm commands run on-device and only execute when a local Llama 3.2 3B and a rule-based parser agree: **0 wrong moves** on 117 unseen phrasings (the model alone made 20), in **0.25 s** against 4.4 s through the cloud. It also reads the breadboard with SAM 3.1 and fixes and flashes the firmware.
 
 **[vision_demos](https://github.com/raahimnawaz/vision_demos)** · *Python / ROS 2 / PyTorch / OpenCV / Arduino*
-A closed perception → decision → actuation loop: webcam gestures drive a robot base, run both as a plain Python loop and as a ROS 2 node graph (`/image_raw` → `/gesture` → `/cmd_vel`) that imports the same controller unchanged. A debounced state machine (confidence gate, stability requirement, dead-man timeout) turns a twitchy per-frame classifier into safe `(v, ω)` commands for sim, Arduino or HID backends. OWLv2 open-vocabulary detection runs in 1.6 GB of memory.
+A closed perception → decision → actuation loop: webcam gestures drive a robot base, both as a plain Python loop and as a ROS 2 node graph sharing one controller. A debounced state machine (confidence gate, stability requirement, dead-man timeout) turns a twitchy gesture classifier into safe `(v, ω)` commands for sim, Arduino or HID backends.
 
 #### Control & estimation
 
@@ -27,7 +27,7 @@ Quaternion attitude estimation and control on an ATmega2560 with no floating-poi
 Physics-informed parameter estimation for vehicle braking dynamics. Five estimators on the same data (batch optimiser, EKF, MLP and two PINNs) with a model-mismatch study showing which method wins *when*. A network with no assumed functional form recovers the Pacejka friction peak at **0.889** against a true 0.900 from noisy braking data. Ships an allocation-free C++ edge port at **7 ns per EKF step** (**41×** over the same math in scalar Python), 33 KB deployable, zero external dependencies, Python↔C++ parity to 7.4e-9.
 
 **[singularity-robust-control](https://github.com/raahimnawaz/singularity-robust-control)** · *Python / C++ / ROS 2 / Webots*
-Detects an approaching kinematic singularity in a 3R arm and schedules damped-least-squares damping before joint velocities blow up. Driven through a singularity, the naive inverse Jacobian commands **2,434 rad/s** and saturates for half the run; the damped law holds it to 2.8 rad/s. The finding that cuts the other way is published too: a well-chosen fixed damping beats the adaptive schedule on that crossing, so scheduling buys selectivity (zero cost on the 90 % of the workspace that never needs damping), not better protection. The law ships as header-only C++ held to the Python reference within 1e-9, and as a `ros2_control` plugin on a Webots arm.
+Schedules damped-least-squares damping as a 3R arm nears a kinematic singularity: through the crossing, the naive inverse Jacobian commands **2,434 rad/s** and the damped law 2.8 rad/s. Ships as header-only C++ held to the Python reference within 1e-9, and as a `ros2_control` plugin on a Webots arm.
 
 #### Perception
 
@@ -52,7 +52,7 @@ Two-stage US West Coast fire prediction on real satellite data: XGBoost ignition
 
 **[flux](https://raahimnawaz.github.io/flux/)**: interactive 2D/3D visualizations of the math I keep reaching for: Jacobians & manipulability ellipsoids, Kalman filtering, Fourier, vector fields, optimization, eigenvectors. Vanilla JS, no build step.
 **[neutrino-ml](https://github.com/raahimnawaz/neutrino-ml)**: ML on real ATLAS Open Data (13 TeV W→ℓν). XGBoost separates real-neutrino events at weighted AUC 0.825, and neutrino-p_z reconstruction recovers the W mass at 80.38 GeV (PDG 80.379).
-**[quantview](https://github.com/raahimnawaz/quantview)**: Bloomberg-style quant terminal in the shell. Black-Scholes Greeks, CRR/trinomial lattices, Monte Carlo (GBM + Heston), Markowitz, VaR. Pure NumPy/SciPy math layer cross-checked against QuantLib.
+**[quantview](https://github.com/raahimnawaz/quantview)**: Bloomberg-style quant terminal in the shell: Black-Scholes Greeks, CRR/trinomial lattices, Monte Carlo (GBM + Heston), Markowitz and VaR. The NumPy/SciPy math layer is cross-checked against QuantLib.
 
 ---
 
