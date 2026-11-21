@@ -16,8 +16,8 @@ Most of my work falls into three lines, each building on earlier projects.
 - A voice-controlled lab assistant with a robot arm, built for the Meta Global AI Developer Hackathon 2026. A desk camera finds the tool you name and the arm picks it up; a command only runs when a local Llama model and a rule-based parser agree, giving **0 wrong moves** on 117 new phrasings.
 
 Grew out of:
-- **[singularity-robust-control](https://github.com/raahimnawaz/singularity-robust-control)**: the damped-least-squares control the arm's IK uses, studied on its own. Through a singularity the naive controller asks for **2,434 rad/s**; the damped one, 2.8.
-- **[vision_demos](https://github.com/raahimnawaz/vision_demos)**: the same perception → decision → action loop, with hand gestures driving a robot base in Python and ROS 2.
+- **[singularity-guard](https://github.com/raahimnawaz/singularity-guard)**: the damped-least-squares control the arm's IK uses, studied on its own. Through a singularity the naive controller asks for **2,434 rad/s**; the damped one, 2.8.
+- **[ros2-vision-nodes](https://github.com/raahimnawaz/ros2-vision-nodes)**: the same perception → decision → action loop, with hand gestures driving a robot base in Python and ROS 2.
 
 #### Wildfire drone
 
@@ -25,7 +25,7 @@ Grew out of:
 - The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four tailsitter drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
 
 Will build on:
-- **[aerospace-surrogate](https://github.com/raahimnawaz/aerospace-surrogate)**: the wing model. ML aerodynamics that hold up through stall, where the classic theory fails.
+- **[liftline](https://github.com/raahimnawaz/liftline)**: the wing model. ML aerodynamics that hold up through stall, where the classic theory fails.
 - **[wildfire](https://github.com/raahimnawaz/wildfire)** · [live](https://raahimnawaz.github.io/wildfire/): the fire forecast. Predicts where West Coast fires will start and spread, from satellite data.
 
 #### Motorsport
@@ -41,7 +41,7 @@ Builds on:
 #### Also
 
 - **[monocular-vo](https://github.com/raahimnawaz/monocular-vo)**: tracks a camera's path in real metres from a single webcam, within **13 %** on a measured 5 m walk.
-- [flux](https://raahimnawaz.github.io/flux/) (interactive visualizations of the math behind robotics) · [neutrino-ml](https://github.com/raahimnawaz/neutrino-ml) (finding neutrinos in real ATLAS collision data) · [quantview](https://github.com/raahimnawaz/quantview) (a Bloomberg-style finance terminal in the shell)
+- [flux](https://raahimnawaz.github.io/flux/) (interactive visualizations of the math behind robotics) · [neutrino-atlas-reconstruction](https://github.com/raahimnawaz/neutrino-atlas-reconstruction) (finding neutrinos in real ATLAS collision data) · [quantview](https://github.com/raahimnawaz/quantview) (a Bloomberg-style finance terminal in the shell)
 
 ---
 
