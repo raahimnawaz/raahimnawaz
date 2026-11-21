@@ -1,8 +1,8 @@
 ### Hi, I'm Raahim
 
-Robotics engineer. I build systems from first-principles physics and modern ML, and I like them to run on real hardware.
+Robotics and autonomous systems engineer. I build intelligent machines that connect physical engineering with modern AI, from mathematical models and embedded control to autonomous systems operating in the real world.
 
-My usual approach: derive the physics, learn what it can't explain, benchmark it honestly against the classical method, then port it to something that runs in a control loop. Where the model loses is often the most interesting part, so I publish that too.
+My work spans robotics, aerospace, and physics-informed machine learning. I care about the entire engineering stack: understanding the underlying physics, designing the hardware, developing the intelligence, and validating the resulting system.
 
 Most of my work falls into three lines, each building on earlier projects.
 
