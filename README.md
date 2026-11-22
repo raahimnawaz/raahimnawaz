@@ -25,7 +25,7 @@ Most of my work falls into three lines, each building on earlier projects.
 - The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four tailsitter drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
 
 Will devlop using:
-    - **[liftline](https://github.com/raahimnawaz/liftline)**: the wing model. ML aerodynamics that hold up through stall, where the classic theory fails.
+    - **[liftline](https://github.com/raahimnawaz/liftline)**: the wing model. ML aerodynamics that hold up through stall, where the classic theory fails.     
     - **[wildfire](https://github.com/raahimnawaz/wildfire)** · [live](https://raahimnawaz.github.io/wildfire/): the fire forecast. Predicts where West Coast fires will start and            spread, from satellite data.
 
 #### Motorsport
