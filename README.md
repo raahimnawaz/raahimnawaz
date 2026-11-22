@@ -4,7 +4,26 @@ Robotics and autonomous systems engineer. I build intelligent machines that conn
 
 My work spans robotics, aerospace, and physics-informed machine learning. I care about the entire engineering stack: understanding the underlying physics, designing the hardware, developing the intelligence, and validating the resulting system.
 
-Most of my work falls into three lines, each building on earlier projects.
+Most of my work falls into three lines, each building on earlier projects:
+
+```mermaid
+flowchart LR
+  subgraph R["Robotics"]
+    sg["singularity-guard"] --> wc["workbench-copilot"]
+    rv["ros2-vision-nodes"] --> wc
+  end
+  subgraph W["Wildfire drone"]
+    ll["liftline"] -.-> wv["wildfire-vtol"]
+    wf["wildfire"] -.-> wv
+  end
+  subgraph M["Motorsport"]
+    em["engine-map-pinn"] --> pf["parc-ferme"]
+    vde["vehicle-dynamics-estimation"] -.-> pf
+    ax["apex-forecast"] -.-> pf
+  end
+```
+
+<sub>Solid arrow: already built on. Dashed: planned.</sub>
 
 📫 [LinkedIn](https://www.linkedin.com/in/raahim-nawaz-9ab64220b/)
 
@@ -12,31 +31,28 @@ Most of my work falls into three lines, each building on earlier projects.
 
 #### Robotics
 
-**[workbench-copilot](https://github.com/raahimnawaz/workbench-copilot)** · *Python · LeRobot · SO-101 arm*
-- A voice-controlled lab assistant with a robot arm, built for the Meta Global AI Developer Hackathon 2026. A desk camera finds the tool you name and the arm picks it up; a command only runs when a local Llama model and a rule-based parser agree, giving **0 wrong moves** on 117 new phrasings.
+**[workbench-copilot](https://github.com/raahimnawaz/workbench-copilot)** · *Python · LeRobot · SO-101 arm*<br>
+A voice-controlled lab assistant with a robot arm, built for the Meta Global AI Developer Hackathon 2026. A desk camera finds the tool you name and the arm picks it up; a command only runs when a local Llama model and a rule-based parser agree, giving **0 wrong moves** on 117 new phrasings.
 
-  Devloped using:
-  - **[singularity-guard](https://github.com/raahimnawaz/singularity-guard)**: the damped-least-squares control the arm's IK uses, studied on its own. Through a singularity the naive        controller asks for **2,434 rad/s**; the damped one, 2.8.
-  - **[ros2-vision-nodes](https://github.com/raahimnawaz/ros2-vision-nodes)**: the same perception → decision → action loop, with hand gestures driving a robot base in Python and ROS 2.
+- ↳ **[singularity-guard](https://github.com/raahimnawaz/singularity-guard)** · *groundwork*: the damped-least-squares control the arm's IK uses, studied on its own. Through a singularity the naive controller asks for **2,434 rad/s**; the damped one, 2.8.
+- ↳ **[ros2-vision-nodes](https://github.com/raahimnawaz/ros2-vision-nodes)** · *groundwork*: the same perception → decision → action loop, with hand gestures driving a robot base in Python and ROS 2.
 
 #### Wildfire drone
 
-**[wildfire-vtol](https://github.com/raahimnawaz/wildfire-vtol)** · *C++ · embedded*
-- The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four tailsitter drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
+**[wildfire-vtol](https://github.com/raahimnawaz/wildfire-vtol)** · *C++ · embedded*<br>
+The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four tailsitter drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
 
-Will devlop using:
-    - **[liftline](https://github.com/raahimnawaz/liftline)**: the wing model. ML aerodynamics that hold up through stall, where the classic theory fails.     
-    - **[wildfire](https://github.com/raahimnawaz/wildfire)** · [live](https://raahimnawaz.github.io/wildfire/): the fire forecast. Predicts where West Coast fires will start and            spread, from satellite data.
+- ↳ **[liftline](https://github.com/raahimnawaz/liftline)** · *planned: the wing model*: ML aerodynamics that hold up through stall, where the classic theory fails.
+- ↳ **[wildfire](https://github.com/raahimnawaz/wildfire)** · [live](https://raahimnawaz.github.io/wildfire/) · *planned: the fire forecast*: predicts where West Coast fires will start and spread, from satellite data.
 
 #### Motorsport
 
-**[parc-ferme](https://github.com/raahimnawaz/parc-ferme)** · [live](https://raahimnawaz.github.io/parc-ferme/) · *Python · Numba*
-- Post-session engineering debriefs for 2026 F1, worked out from public timing data by physics models checked against what the cars actually did. A digital 2026 car laps in **0.3 ms**, and a test bench with known answers recovers each team's mechanical grip to **0.3 %**.
+**[parc-ferme](https://github.com/raahimnawaz/parc-ferme)** · [live](https://raahimnawaz.github.io/parc-ferme/) · *Python · Numba*<br>
+Post-session engineering debriefs for 2026 F1, worked out from public timing data by physics models checked against what the cars actually did. A digital 2026 car laps in **0.3 ms**, and a test bench with known answers recovers each team's mechanical grip to **0.3 %**.
 
-Built with:
-    - **[engine-map-pinn](https://github.com/raahimnawaz/engine-map-pinn)**: the track model and lap simulator, ported and extended for 2026. A better racing line saves **53 s** at the Nürburgring; doubling the power gains only **5–6 %**.
-    - **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** *(planned: tyres and brakes)*: five estimators, from a Kalman filter to physics-informed neural networks, compared on the same braking data. The C++ port runs a filter step in **7 ns**.
-    - **[apex-forecast](https://github.com/raahimnawaz/apex-forecast)** · [live](https://raahimnawaz.github.io/apex-forecast/) *(planned: race strategy)*: Bayesian F1 race forecasts for 2026. **93 %** of the finishing order comes down to the car.
+- ↳ **[engine-map-pinn](https://github.com/raahimnawaz/engine-map-pinn)** · *in use: track model and lap simulator*: a better racing line saves **53 s** at the Nürburgring; doubling the power gains only **5–6 %**.
+- ↳ **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** · *planned: tyres and brakes*: five estimators, from a Kalman filter to physics-informed neural networks, compared on the same braking data. The C++ port runs a filter step in **7 ns**.
+- ↳ **[apex-forecast](https://github.com/raahimnawaz/apex-forecast)** · [live](https://raahimnawaz.github.io/apex-forecast/) · *planned: race strategy*: Bayesian F1 race forecasts for 2026. **93 %** of the finishing order comes down to the car.
 
 #### Also
 
