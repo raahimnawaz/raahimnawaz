@@ -6,23 +6,6 @@ My work spans robotics, aerospace, and physics-informed machine learning. I care
 
 Most of my work falls into three lines, each building on earlier projects:
 
-```mermaid
-flowchart LR
-  subgraph R["Robotics"]
-    sg["singularity-guard"] --> wc["workbench-copilot"]
-    rv["ros2-vision-nodes"] --> wc
-  end
-  subgraph W["Wildfire drone"]
-    ll["liftline"] -.-> wv["wildfire-vtol"]
-    wf["wildfire"] -.-> wv
-  end
-  subgraph M["Motorsport"]
-    em["engine-map-pinn"] --> pf["parc-ferme"]
-    vde["vehicle-dynamics-estimation"] -.-> pf
-    ax["apex-forecast"] -.-> pf
-  end
-```
-
 <sub>Solid arrow: already built on. Dashed: planned.</sub>
 
 📫 [LinkedIn](https://www.linkedin.com/in/raahim-nawaz-9ab64220b/)
