@@ -22,7 +22,7 @@ Built from:
 
 #### Wildfire drone
 
-**[wildfire-vtol](https://github.com/raahimnawaz/wildfire-vtol)** · *C++ · embedded*<br>
+**[wildfire-vtol](https://github.com/raahimnawaz/wildfire-vtol)** · *CFD · embedded · PCB Design*<br>
 The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four tailsitter drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
 
 Built with:
@@ -32,7 +32,7 @@ Built with:
 
 #### Motorsport
 
-**[parc-ferme](https://github.com/raahimnawaz/parc-ferme)** · [live](https://raahimnawaz.github.io/parc-ferme/) · *Python · Numba*<br>
+**[parc-ferme](https://github.com/raahimnawaz/parc-ferme)** · [live](https://raahimnawaz.github.io/parc-ferme/) · *Python · Numba · Bayesian Modeling*<br>
 Post-session engineering debriefs for 2026 F1, worked out from public timing data by physics models checked against what the cars actually did. A digital 2026 car laps in **0.3 ms**, and a test bench with known answers recovers each team's mechanical grip to **0.3 %**.
 
 Built on:
