@@ -15,6 +15,8 @@ Most of my work falls into three lines, each building on earlier projects:
 **[workbench-copilot](https://github.com/raahimnawaz/workbench-copilot)** · *Python · LeRobot · SO-101 arm*<br>
 A voice-controlled lab assistant with a robot arm, built for the Meta Global AI Developer Hackathon 2026. A desk camera finds the tool you name and the arm picks it up; a command only runs when a local Llama model and a rule-based parser agree, giving **0 wrong moves** on 117 new phrasings.
 
+Built from:
+
 -  **[singularity-guard](https://github.com/raahimnawaz/singularity-guard)** · *groundwork*: the damped-least-squares control the arm's IK uses, studied on its own. Through a singularity the naive controller asks for **2,434 rad/s**; the damped one, 2.8.
 -  **[ros2-vision-nodes](https://github.com/raahimnawaz/ros2-vision-nodes)** · *groundwork*: the same perception → decision → action loop, with hand gestures driving a robot base in Python and ROS 2.
 
@@ -23,6 +25,8 @@ A voice-controlled lab assistant with a robot arm, built for the Meta Global AI 
 **[wildfire-vtol](https://github.com/raahimnawaz/wildfire-vtol)** · *C++ · embedded*<br>
 The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four tailsitter drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
 
+Built with:
+
 -  **[liftline](https://github.com/raahimnawaz/liftline)** · *planned: the wing model*: ML aerodynamics that hold up through stall, where the classic theory fails.
 -  **[wildfire](https://github.com/raahimnawaz/wildfire)** · [live](https://raahimnawaz.github.io/wildfire/) · *planned: the fire forecast*: predicts where West Coast fires will start and spread, from satellite data.
 
@@ -30,6 +34,8 @@ The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership a
 
 **[parc-ferme](https://github.com/raahimnawaz/parc-ferme)** · [live](https://raahimnawaz.github.io/parc-ferme/) · *Python · Numba*<br>
 Post-session engineering debriefs for 2026 F1, worked out from public timing data by physics models checked against what the cars actually did. A digital 2026 car laps in **0.3 ms**, and a test bench with known answers recovers each team's mechanical grip to **0.3 %**.
+
+Built on:
 
 -  **[engine-map-pinn](https://github.com/raahimnawaz/engine-map-pinn)** · *in use: track model and lap simulator*: a better racing line saves **53 s** at the Nürburgring; doubling the power gains only **5–6 %**.
 -  **[vehicle-dynamics-estimation](https://github.com/raahimnawaz/vehicle-dynamics-estimation)** · *planned: tyres and brakes*: five estimators, from a Kalman filter to physics-informed neural networks, compared on the same braking data. The C++ port runs a filter step in **7 ns**.
