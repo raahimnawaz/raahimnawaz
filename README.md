@@ -19,7 +19,7 @@ Built from:
 
 -  **[singularity-guard](https://github.com/raahimnawaz/singularity-guard)** · *groundwork*: the damped-least-squares control the arm's IK uses, studied on its own. Through a singularity the naive controller asks for **2,434 rad/s**; the damped one, 2.8.
 -  **[ros2-vision-nodes](https://github.com/raahimnawaz/ros2-vision-nodes)** · *groundwork*: the same perception → decision → action loop, with hand gestures driving a robot base in Python and ROS 2.
--  **[monocular-vo](https://github.com/raahimnawaz/monocular-vo)** · *planned*: the wrist camera: visual SLAM from a single RGB camera, with foundation-model depth (Depth Anything v2) and a gtsam pose graph. On the TUM RGB-D benchmark, scored against motion-capture ground truth, it tracks all 256 keyframes with no resets, and 53 loop closures cut trajectory error by **36 %** (0.32 → 0.21 m).
+-  **[monocular-vo](https://github.com/raahimnawaz/monocular-vo)** · *planned*: the wrist camera: visual SLAM from a single RGB camera, with foundation-model depth (Depth Anything v2) and a gtsam pose graph. On the TUM RGB-D benchmark, scored against motion-capture ground truth, it tracks all 256 keyframes with no resets, and 53 loop closures cut trajectory error by **36 %**.
 
 #### Wildfire drone
 
