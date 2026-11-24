@@ -44,7 +44,7 @@ Built on:
 
 #### Also
 
-- **[monocular-vo](https://github.com/raahimnawaz/monocular-vo)**: tracks a camera's path in real metres from a single webcam, within **13 %** on a measured 5 m walk.
+- **[rsna-knee-abnormality-detection](https://github.com/raahimnawaz/rsna-knee-abnormality-detection)** · *Kaggle*: twelve findings per knee MRI, learned only from free-text radiology reports and free GPUs. I found that every report-trained model treats three separate arthritis findings as one (correlation **0.82**, against **0.32** in the radiologists' grades) and trained a model to separate them. My models alone score **0.949** AUROC.
 - [flux](https://raahimnawaz.github.io/flux/) (interactive visualizations of the math behind robotics) · [neutrino-atlas-reconstruction](https://github.com/raahimnawaz/neutrino-atlas-reconstruction) (finding neutrinos in real ATLAS collision data) · [quantview](https://github.com/raahimnawaz/quantview) (a Bloomberg-style finance terminal in the shell)
 
 ---
