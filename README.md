@@ -23,7 +23,7 @@ Built from:
 #### Wildfire drone
 
 **[wildfire-vtol](https://github.com/raahimnawaz/wildfire-vtol)** · *CFD · embedded · PCB Design*<br>
-The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four tailsitter drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
+The flight core for a simulated wildfire-mapping fleet: a tiltrotor mothership and four fixed-wing FPV drones. Today it is quaternion attitude control on a chip with no floating-point unit, with the control loop sped up from **23 Hz to 179 Hz**.
 
 Built with:
 
